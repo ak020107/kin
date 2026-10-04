@@ -1,0 +1,193 @@
+/* Shared surfaces for the working care pages. */
+.kin-app-interior .kin-navigation{width:100%;max-width:1920px}
+.kin-app-interior .kin-profile{margin-right:0}
+.kin-app-interior .kin-artwork{opacity:.32}
+.kin-existing-main{width:calc(100% - 96px);max-width:1440px;margin:0 auto 32px;height:calc(100dvh - 144px);min-height:0;background:rgba(8,31,25,.86);color:var(--kin-text);border:1px solid rgba(216,245,233,.18);border-radius:28px;font-family:'Manrope Variable',sans-serif;box-shadow:0 24px 72px rgba(0,12,8,.2),inset 0 1px 0 rgba(235,255,246,.12);backdrop-filter:blur(18px);animation:kin-page-enter .24s ease-out both}
+.kin-today-main{animation:kin-page-enter .24s ease-out both}
+@keyframes kin-page-enter{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.kin-existing-main .topbar{padding:24px 32px;border-color:rgba(216,245,233,.12)}
+.kin-existing-main .eyebrow{color:var(--kin-muted);font-size:11px;letter-spacing:1.2px}
+.kin-existing-main .topbar h1{font-size:26px;line-height:1.3;font-weight:500;margin-top:8px}
+.kin-existing-main .privacy-tag{font-size:12px;background:rgba(173,230,206,.08);color:var(--kin-body);border-color:rgba(216,245,233,.16);padding:9px 13px}
+.kin-existing-main .conversation{padding:28px 32px;scrollbar-gutter:stable}
+.kin-existing-main .conversation>*{max-width:860px;margin-inline:auto}
+.kin-existing-main .welcome{margin-top:32px;padding-bottom:24px;max-width:640px}
+.kin-existing-main .welcome-mark{background:rgba(173,230,206,.12);color:var(--kin-accent);border:1px solid rgba(216,245,233,.16);transform:none}
+.kin-existing-main .welcome-mark>span{color:var(--kin-accent)}
+.kin-existing-main .welcome h2{font-size:clamp(28px,3vw,40px);line-height:1.25;letter-spacing:-1px}
+.kin-existing-main .welcome>p{font-size:16px;color:var(--kin-body);line-height:1.7}
+.kin-existing-main .welcome-foot{font-size:12px;color:var(--kin-muted)}
+.kin-existing-main .starter-list{max-width:500px}
+.kin-existing-main .starter-list button{background:rgba(173,230,206,.06);border-color:rgba(216,245,233,.18);color:var(--kin-text);font-size:14px;padding:17px 20px;border-radius:16px;min-height:54px}
+.kin-existing-main .message-list{gap:28px}
+.kin-existing-main .message{gap:14px}
+.kin-existing-main .message>div{flex:1}
+.kin-existing-main .avatar{width:38px;height:38px;background:rgba(173,230,206,.14);color:var(--kin-accent);font-size:14px}
+.kin-existing-main .message.human .avatar{background:#aedbcc;color:var(--kin-ink)}
+.kin-existing-main .message-author{font-size:14px;margin-bottom:10px}
+.kin-existing-main .message-author span{font-size:12px;color:var(--kin-muted)}
+.kin-existing-main .message p{font-size:16px;line-height:1.75;color:var(--kin-body);overflow-wrap:anywhere}
+.kin-existing-main .message.assistant>div{padding:22px 24px;background:linear-gradient(145deg,rgba(173,230,206,.1),rgba(173,230,206,.035));border-color:rgba(216,245,233,.18);border-radius:4px 22px 22px 22px}
+.kin-existing-main .message small{font-size:12px;color:var(--kin-muted)}
+.kin-existing-main .message blockquote{border-color:var(--kin-accent);background:rgba(173,230,206,.04);font-size:14px;color:var(--kin-body);border-radius:0 12px 12px 0}
+.kin-existing-main .sources button{font-size:12px;padding:8px 10px;background:rgba(173,230,206,.08);border-color:rgba(216,245,233,.2);color:var(--kin-accent);border-radius:10px}
+.kin-existing-main .composer-area{padding:18px 32px 22px;border-top:1px solid rgba(216,245,233,.1);background:rgba(6,28,24,.72)}
+.kin-existing-main .composer-area>*{max-width:860px;margin-inline:auto}
+.kin-existing-main .composer{background:rgba(173,230,206,.07);border-color:rgba(216,245,233,.28);border-radius:20px;padding:8px 10px;box-shadow:inset 0 1px 0 rgba(237,255,248,.08)}
+.kin-existing-main .composer:focus-within{border-color:var(--kin-accent);box-shadow:0 0 0 3px rgba(173,230,206,.08)}
+.kin-existing-main .composer input{font-size:16px;padding:12px;color:var(--kin-text);outline:none}
+.kin-existing-main input::placeholder,.kin-dialog textarea::placeholder{color:#92aea2}
+.kin-existing-main .composer button{width:46px;height:46px;border-radius:15px;background:var(--kin-accent);color:var(--kin-ink)}
+.kin-existing-main .composer-caption{font-size:11px;line-height:1.5;color:var(--kin-muted);margin-top:10px}
+.kin-existing-main .primary,.kin-existing-main .secondary,.kin-existing-main .share-shortcut,.kin-dialog .primary,.kin-dialog .secondary{min-height:46px;padding:12px 18px;border-radius:999px;font-size:14px;line-height:20px;transition:box-shadow .2s,border-color .2s;filter:none}
+.kin-existing-main .primary,.kin-dialog .primary{background:var(--kin-accent);color:var(--kin-ink)}
+.kin-existing-main .secondary,.kin-existing-main .share-shortcut,.kin-dialog .secondary{background:rgba(173,230,206,.08);color:var(--kin-text);border:1px solid rgba(216,245,233,.24)}
+.kin-existing-main .page-content{width:100%;max-width:1080px;margin-inline:auto;padding:32px;flex:1;min-height:0}
+.kin-existing-main .page-content h2{font-size:32px;line-height:1.3;font-weight:500;letter-spacing:-.7px}
+.kin-existing-main .page-content>p{font-size:15px;color:var(--kin-body);line-height:1.7}
+.kin-existing-main .task-card{padding:22px;gap:16px;border-color:rgba(216,245,233,.18);background:rgba(173,230,206,.055);border-radius:20px;margin-bottom:16px}
+.kin-existing-main .task-card>svg{color:var(--kin-accent)}
+.kin-existing-main .task-card strong{font-size:17px;line-height:1.5}
+.kin-existing-main .task-card p{font-size:13px;line-height:1.6;color:var(--kin-muted)}
+.kin-existing-main .done{font-size:13px;color:var(--kin-accent)}
+.kin-existing-main .empty{padding:40px 24px;background:rgba(173,230,206,.05);color:var(--kin-muted);border:1px dashed rgba(216,245,233,.2);border-radius:22px}
+.kin-existing-main .empty h3{font-size:20px;color:var(--kin-text)}
+.kin-existing-main .empty p{font-size:14px;line-height:1.7}
+.kin-existing-main .record-connect,.kin-existing-main .for-you{padding:24px;border-color:rgba(216,245,233,.2);background:linear-gradient(145deg,rgba(173,230,206,.09),rgba(173,230,206,.035));border-radius:22px}
+.kin-existing-main .record-connect strong{font-size:18px;font-weight:600}
+.kin-existing-main .record-connect p,.kin-existing-main .for-you p{font-size:14px;color:var(--kin-body);line-height:1.7}
+.kin-existing-main .record-connect small{font-size:12px;color:var(--kin-muted);line-height:1.6}
+.kin-existing-main .record-connect label,.kin-existing-main .settings-row label{font-size:13px;color:var(--kin-body)}
+.kin-existing-main input:not([type=checkbox]),.kin-existing-main select,.kin-dialog input:not([type=checkbox]),.kin-dialog select,.kin-dialog textarea{color:var(--kin-text);background:#12352b;border:1px solid rgba(216,245,233,.24);border-radius:12px;padding:13px 14px;font-size:16px;max-width:100%;min-width:0;box-sizing:border-box}
+.kin-existing-main select option,.kin-dialog select option{background:#12352b;color:var(--kin-text)}
+.kin-existing-main .composer input{background:transparent;border:0}
+.kin-existing-main .record-connect input{width:100%}
+.kin-existing-main .record-warning{background:rgba(246,193,118,.09);color:#f4d7ab;border-color:rgba(246,193,118,.25);border-radius:12px}
+.kin-existing-main .record-list{gap:14px}
+.kin-existing-main .record-row{padding:22px;background:rgba(173,230,206,.04);border-color:rgba(216,245,233,.16);border-radius:18px;color:var(--kin-text);gap:16px;transition:border-color .2s,background-color .2s}
+.kin-existing-main .record-row>svg{color:var(--kin-accent);margin-top:3px}
+.kin-existing-main .record-row span{min-width:0}
+.kin-existing-main .record-row strong{font-size:16px}
+.kin-existing-main .record-row p{font-size:14px;line-height:1.7;color:var(--kin-body);overflow-wrap:anywhere}
+.kin-existing-main .record-row small{font-size:12px;color:var(--kin-muted)}
+.kin-page-records{overflow-y:auto;display:block;scrollbar-gutter:stable}
+.kin-page-records>.record-connect{max-width:1016px;margin:32px auto 0;width:calc(100% - 64px)}
+.kin-page-records .record-hub{overflow:visible}
+.kin-existing-main .settings-row{padding:24px;border:1px solid rgba(216,245,233,.16);background:rgba(173,230,206,.04);border-radius:20px;margin-top:20px;gap:18px}
+.kin-existing-main .settings-row>div{min-width:0;flex:1}
+.kin-existing-main .settings-row>svg{color:var(--kin-accent)}
+.kin-existing-main .settings-row h3{font-size:18px;font-weight:500}
+.kin-existing-main .settings-row p{font-size:14px;line-height:1.75;color:var(--kin-body)}
+.kin-existing-main .member-row{font-size:15px;padding:12px 0;border-bottom:1px solid rgba(216,245,233,.1);gap:12px;flex-wrap:wrap}
+.kin-existing-main .invite-code{border-color:rgba(216,245,233,.2);border-radius:14px;background:rgba(173,230,206,.04);overflow-wrap:anywhere}
+.kin-existing-main .invite-code small{color:var(--kin-muted)}
+.kin-existing-main .for-you-label,.kin-existing-main .for-you p.why,.kin-existing-main .care-dismiss{color:var(--kin-muted)}
+.kin-existing-main .for-you h2{font-size:24px;color:var(--kin-text)}
+.kin-existing-main .care-progress{border-color:rgba(216,245,233,.18)}
+.kin-existing-main .status{color:var(--kin-muted)}
+.kin-existing-main .error{background:rgba(238,130,103,.12);color:#ffd0c2;border:1px solid rgba(238,130,103,.25);font-size:14px}
+.kin-overlay{background:rgba(0,15,10,.7);backdrop-filter:blur(8px)}
+.kin-dialog{background:#0f3027;color:var(--kin-text);font-family:'Manrope Variable',sans-serif;border:1px solid rgba(216,245,233,.25);border-radius:26px;padding:32px;box-shadow:0 24px 80px rgba(0,12,8,.5)}
+.kin-dialog h2{font-size:27px;font-weight:500;line-height:1.3}
+.kin-dialog>p,.kin-dialog .brief-text{font-size:15px;line-height:1.75;color:var(--kin-body)}
+.kin-dialog .fine-print{font-size:12px;color:var(--kin-muted)}
+.kin-dialog .close{color:var(--kin-muted)}
+.kin-dialog .share-options label{background:rgba(173,230,206,.05);border-color:rgba(216,245,233,.2);border-radius:14px}
+.kin-dialog .share-options p,.kin-dialog .share-options small,.kin-dialog dt{color:var(--kin-muted)}
+.kin-dialog .share-options strong{font-size:14px}
+.kin-dialog input[type=checkbox]{accent-color:var(--kin-accent)}
+.kin-dialog .evidence-category{background:rgba(173,230,206,.13);color:var(--kin-accent);border-radius:8px}
+.kin-dialog dl{border-color:rgba(216,245,233,.18);font-size:14px;grid-template-columns:120px minmax(0,1fr)}
+.kin-dialog pre{color:var(--kin-body)}
+.kin-app .toast{background:#164435;border:1px solid rgba(216,245,233,.25);border-radius:16px;font-size:14px;bottom:24px}
+@media(hover:hover) and (pointer:fine){.kin-existing-main .primary:hover,.kin-existing-main .secondary:hover,.kin-dialog .primary:hover,.kin-dialog .secondary:hover{box-shadow:0 0 0 3px rgba(173,230,206,.1);filter:none}.kin-existing-main .record-row:hover,.kin-existing-main .starter-list button:hover{background:rgba(173,230,206,.1);border-color:rgba(216,245,233,.35);filter:none}}
+@media(max-width:1050px){.kin-existing-main{width:calc(100% - 48px)}.kin-existing-main .topbar{padding:22px 24px}}
+@media(max-width:760px){
+ .kin-app-interior .kin-navigation{height:84px;padding:20px 24px}
+ .kin-existing-main{width:100%;height:calc(100dvh - 84px);margin:0;border-radius:24px 24px 0 0;border-inline:0;padding-bottom:94px;box-shadow:none}
+ .kin-existing-main .topbar{padding:20px;align-items:flex-start;flex-wrap:wrap;gap:12px}
+ .kin-existing-main .topbar h1{font-size:24px}
+ .kin-existing-main .privacy-tag{font-size:11px}
+ .kin-existing-main .conversation{padding:24px 20px}
+ .kin-existing-main .welcome{margin-top:16px}
+ .kin-existing-main .welcome h2{font-size:29px}
+ .kin-existing-main .welcome>p{font-size:15px}
+ .kin-existing-main .composer-area{padding:12px 16px 16px}
+ .kin-existing-main .composer-caption{font-size:10px}
+ .kin-existing-main .message{gap:10px}
+ .kin-existing-main .avatar{width:30px;height:30px;font-size:12px}
+ .kin-existing-main .message-author span{display:block;margin:5px 0 0}
+ .kin-existing-main .message.assistant>div{padding:16px;border-radius:4px 18px 18px 18px}
+ .kin-existing-main .message p{font-size:15px}
+ .kin-existing-main .page-content{padding:24px 20px}
+ .kin-existing-main .page-content h2{font-size:28px}
+ .kin-existing-main .record-connect,.kin-existing-main .for-you,.kin-existing-main .task-card{padding:18px}
+ .kin-page-records>.record-connect{width:calc(100% - 40px);margin-top:24px}
+ .kin-existing-main .record-row{padding:18px;gap:12px}
+ .kin-existing-main .task-card>div{flex-basis:calc(100% - 44px)}
+ .kin-existing-main .task-card button{margin-left:0;flex:1 1 auto}
+ .kin-existing-main .settings-row{padding:18px;gap:12px}
+ .kin-dialog{padding:26px 20px;max-height:88dvh}
+ .kin-dialog h2{font-size:24px}
+ .kin-dialog-actions{flex-wrap:wrap}
+ .kin-app .toast{bottom:100px}
+}
+@media(prefers-reduced-motion:reduce){.kin-existing-main,.kin-today-main{animation:none}}
+@media(prefers-reduced-transparency:reduce){.kin-existing-main{background:#0a241d;backdrop-filter:none}}
+.kin-existing-main,.kin-dialog{color-scheme:dark;scrollbar-color:rgba(173,230,206,.32) transparent;scrollbar-width:thin}
+.kin-existing-main *{scrollbar-color:rgba(173,230,206,.32) transparent;scrollbar-width:thin}
+.kin-existing-main summary{cursor:pointer;font-size:14px;line-height:1.6;margin-top:12px;color:var(--kin-body)}
+.kin-existing-main details>button{margin-right:8px}
+.kin-existing-main .care-dismiss{background:transparent}
+.kin-existing-main .kin-sandbox-tools{max-width:1016px;width:calc(100% - 64px);margin:24px auto 0;border:1px solid rgba(216,245,233,.16);border-radius:16px;padding:14px 18px;background:rgba(173,230,206,.03)}
+.kin-existing-main .kin-sandbox-tools>summary{margin:0;color:var(--kin-muted);font-size:14px}
+.kin-existing-main .kin-sandbox-tools>.record-connect{margin:18px 0 0}
+@media(min-width:1100px){.kin-existing-main .record-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.kin-existing-main .kin-sandbox-tools{width:calc(100% - 40px);margin-top:20px}}
+/* Pages sit directly in the app, without an inset window. */
+.kin-existing-main{width:100%;max-width:none;margin:0;height:calc(100dvh - 112px);background:transparent;border:0;border-radius:0;box-shadow:none;backdrop-filter:none}
+.kin-existing-main .topbar{width:100%;max-width:1440px;margin-inline:auto;padding:24px 48px;border-bottom:0}
+.kin-existing-main .conversation{padding-top:20px}
+.kin-existing-main .composer-area{background:transparent;border-top:0;padding-bottom:24px}
+.kin-page-records .topbar{max-width:1112px}
+.kin-existing-main .page-content{max-width:1112px;padding-inline:48px}
+@media(max-width:1050px){.kin-existing-main{width:100%}.kin-existing-main .topbar{padding-inline:32px}.kin-existing-main .page-content{padding-inline:32px}}
+@media(max-width:760px){.kin-existing-main{height:calc(100dvh - 84px);border-radius:0;padding-bottom:94px}.kin-existing-main .topbar{padding:20px}.kin-existing-main .page-content{padding:24px 20px}.kin-existing-main .composer-area{padding:12px 16px 16px}}
+@media(prefers-reduced-transparency:reduce){.kin-existing-main{background:transparent}}
+.kin-existing-main .health-guide{display:inline-flex;margin-top:14px;font-size:12px;color:var(--kin-accent);border-bottom:1px solid rgba(173,230,206,.3);padding-bottom:3px}
+
+/* Radix dialogs render outside the app shell, so carry their own theme. */
+.kin-dialog{--kin-text:#eefbf5;--kin-body:#ccdcd5;--kin-muted:#aac2b8;--kin-accent:#ade6ce;--kin-ink:#073b29}
+.kin-dialog .field-label,.kin-dialog>label{color:var(--kin-body);font-size:14px;display:block;margin:20px 0 10px}
+.kin-dialog>small{color:var(--kin-muted);font-size:12px}
+.kin-dialog .sources{gap:8px;margin:20px 0}
+.kin-dialog .sources button{background:rgba(173,230,206,.08);border:1px solid rgba(216,245,233,.22);color:var(--kin-accent);border-radius:10px;font-size:12px;padding:10px 12px;min-height:40px}
+.kin-dialog .record-warning{background:rgba(246,193,118,.09);color:#f4d7ab;border-color:rgba(246,193,118,.25);border-radius:12px;font-size:13px;padding:12px;margin-top:12px}
+.kin-dialog button:focus-visible{outline:3px solid var(--kin-accent);outline-offset:4px}
+
+/* A single compact plan; source detail stays behind a disclosure. */
+.kin-plan-dialog{max-width:680px}
+.plan-items{display:grid;gap:14px;margin:22px 0}
+.plan-item{padding:18px;border:1px solid rgba(210,245,230,.18);border-radius:18px;background:rgba(170,225,202,.04)}
+.kin-dialog .plan-item h3{font-size:16px;margin:0 0 12px}
+.plan-item summary{cursor:pointer;color:var(--kin-muted);font-size:13px}
+.plan-item blockquote{margin:12px 0;padding-left:12px;border-left:2px solid var(--kin-accent);font-size:13px;line-height:1.6;color:var(--kin-body)}
+.plan-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.kin-dialog .plan-actions button{min-height:40px;padding:8px 12px;font-size:12px}
+.plan-status,.plan-reason{font-size:13px!important;color:var(--kin-muted)!important}
+.plan-handoff,.plan-reminder{margin-top:16px;padding-top:14px;border-top:1px solid rgba(210,245,230,.16)}
+.plan-handoff button,.plan-reminder button{margin-top:12px;margin-right:8px}
+.plan-trip{padding-top:16px;max-width:480px}
+@media(max-width:600px){.kin-plan-dialog{width:calc(100vw - 24px)}.plan-item{padding:14px}.plan-actions{gap:6px}}
+
+.kin-dialog .plan-handoff label{display:flex;align-items:center;gap:8px;margin:12px 0;font-size:13px}
+.kin-dialog .plan-handoff input[type=checkbox]{width:16px;height:16px;min-height:0;padding:0;flex:none;accent-color:var(--kin-accent)}
+.kin-dialog .plan-handoff small,.kin-dialog .plan-reminder small{display:block;color:var(--kin-muted);font-size:12px;line-height:1.5;margin:8px 0}
+
+.plan-guidance,.plan-auto-care{padding:18px 0;border-bottom:1px solid #bddfce30;margin-bottom:18px}
+.plan-guidance article{margin-top:18px}.plan-guidance h4{margin-bottom:6px}.plan-guidance small,.plan-auto-care small{display:block;margin-top:8px;color:var(--kin-muted)}
+.plan-guidance a{color:#bfe5d3;text-decoration:underline;text-underline-offset:3px}.plan-auto-care label{display:flex;align-items:center;gap:10px}.plan-auto-care input{width:18px;height:18px;accent-color:#bfe5d3}.plan-auto-care p{font-size:14px;line-height:1.6;margin-top:10px}
+
+.appointment-overview section{padding:18px 0;border-bottom:1px solid #bddfce25}.appointment-overview h3{font-size:20px;margin-bottom:10px}.appointment-overview p{margin:8px 0;line-height:1.5}.appointment-overview ul{padding-left:20px;list-style:disc}.appointment-overview li{margin:14px 0}.appointment-overview small{display:block;font-size:13px;color:var(--kin-muted);line-height:1.5}.appointment-overview details{font-size:14px;margin-top:6px}.appointment-overview blockquote{margin:12px 0;padding-left:12px;border-left:2px solid #bddfce50}
+
+.family-care{width:100%;max-width:900px;margin:0 auto 24px;padding:0 16px}.family-care-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.family-profile-list{display:flex;gap:8px;flex-wrap:wrap}.family-profile-list button{display:flex;flex-direction:column;gap:3px}.family-profile-list small{font-size:11px;opacity:.7}.family-emergency-card,.family-visit-form{margin-top:16px;padding:22px;border:1px solid #bddfce30;border-radius:22px;background:#19382cd9}.family-emergency-card dl{display:grid;gap:14px;margin:18px 0}.family-emergency-card dt{font-size:12px;color:var(--kin-muted)}.family-emergency-card dd{margin:4px 0;white-space:pre-wrap;overflow-wrap:anywhere}.family-card-editor label,.family-visit-form label{display:flex;flex-direction:column;gap:8px;margin:14px 0}.family-card-editor textarea{min-height:75px;width:100%}.family-care small{line-height:1.5}.family-care>details{margin-top:16px}.family-care button{margin-right:6px}.family-care p{margin:12px 0;line-height:1.5}@media(max-width:760px){.family-care{padding:0}.family-emergency-card,.family-visit-form{padding:16px}}

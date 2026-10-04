@@ -1,0 +1,8 @@
+node_modules
+.git
+.env*
+**/*.local
+**/kin-demo-profiles*.json
+spacetimedb/spacetimedb/dist
+
+**/kin-cloud-demo-profiles*.json

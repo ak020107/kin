@@ -1,0 +1,59 @@
+{
+  "name": "kin",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "server": "tsx server/index.ts",
+    "test:ai": "tsx tests/ai.ts",
+    "test:care": "tsx tests/care.ts",
+    "test:care:live": "tsx tests/care-live.ts",
+    "test:ai:live": "tsx tests/ai-live.ts",
+    "build": "tsc -b && vite build && node scripts/build-api.mjs",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "test:security": "tsx tests/security.ts",
+    "test:finch": "tsx tests/finch.ts",
+    "test:family": "tsx tests/family.ts",
+    "test:mentions": "tsx tests/mentions.ts",
+    "test:conversation": "tsx tests/conversation.ts",
+    "test:simulation": "tsx tests/simulation.ts",
+    "test:finch:details:live": "tsx tests/finch-details-live.ts",
+    "test:next-stage": "tsx tests/next-stage.ts",
+    "test:sandbox:adapter": "tsx tests/sandbox-adapter.ts",
+    "test:sharing": "tsx tests/sharing-preferences.ts",
+    "test:today": "tsx tests/today.ts",
+    "test:family:care": "tsx tests/family-care.ts",
+    "test:automation": "tsx tests/automation.ts",
+    "test:explanations": "tsx tests/explanations.ts",
+    "test:prompts": "tsx tests/family-prompts.ts",
+    "test:qc": "tsx tests/qc.ts",
+    "test:provider:repair": "tsx tests/provider-repair.ts",
+    "start": "tsx server/index.ts"
+  },
+  "dependencies": {
+    "@fontsource-variable/manrope": "^5.3.0",
+    "@radix-ui/react-dialog": "^1.1.23",
+    "@tailwindcss/vite": "^4.3.3",
+    "lucide-react": "^1.50.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "spacetimedb": "2.10.2",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "esbuild": "^0.28.2",
+    "oxlint": "^1.81.0",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0"
+  },
+  "engines": {
+    "node": "22.x"
+  }
+}

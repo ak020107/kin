@@ -1,0 +1,20 @@
+import assert from 'node:assert/strict'
+import {randomUUID} from 'node:crypto'
+import {DbConnection} from '../src/module_bindings'
+const clients:DbConnection[]=[]
+async function connect(){const c=await new Promise<DbConnection>((resolve,reject)=>DbConnection.builder().withUri('ws://127.0.0.1:3000').withDatabaseName(process.env.KIN_TEST_DATABASE??'kin-qc-booking-20261004').onConnect(c=>c.subscriptionBuilder().onApplied(()=>resolve(c)).onError(()=>reject(Error('Subscription failed'))).subscribe(['SELECT * FROM my_membership','SELECT * FROM family_visits','SELECT * FROM family_emergency_cards','SELECT * FROM my_reminders'])).onConnectError((_c,e)=>reject(e)).build());clients.push(c);return c}
+async function until(fn:()=>boolean){const end=Date.now()+8000;while(!fn()){if(Date.now()>end)throw Error('Sync timeout');await new Promise(r=>setTimeout(r,30))}}
+try{
+ const d=await connect(),a=await connect(),o=await connect();await d.reducers.createFamily({name:'Daniel'});await o.reducers.createFamily({name:'Maya'});const code=randomUUID().replaceAll('-','')+randomUUID().replaceAll('-','');await d.reducers.createInvite({code,name:'Alex'});await a.reducers.joinFamily({code});await until(()=>!![...a.db.myMembership.iter()][0]);const patient=[...a.db.myMembership.iter()][0].identity
+ await a.reducers.setAutoCare({enabled:true});const id=randomUUID(),slot='2026-10-18T15:00:00Z';await d.reducers.confirmFamilyVisit({requestId:id,patient,slot});await d.reducers.confirmFamilyVisit({requestId:id,patient,slot});await until(()=>[...a.db.familyVisits.iter()].length===1);assert.equal([...o.db.familyVisits.iter()].length,0);assert.equal([...a.db.familyVisits.iter()][0].patient,patient);await until(()=>[...a.db.myReminders.iter()].length===1);assert.equal([...d.db.myReminders.iter()].length,0)
+ await assert.rejects(o.reducers.cancelFamilyVisit({id}));await assert.rejects(o.reducers.confirmFamilyVisit({requestId:randomUUID(),patient,slot:'2026-10-19T15:00:00Z'}));const race=await Promise.allSettled([d.reducers.confirmFamilyVisit({requestId:randomUUID(),patient,slot:'2026-10-19T15:00:00Z'}),a.reducers.confirmFamilyVisit({requestId:randomUUID(),patient,slot:'2026-10-19T15:00:00Z'})]);assert.equal(race.filter(r=>r.status==='fulfilled').length,1)
+ await a.reducers.cancelFamilyVisit({id});await until(()=>[...d.db.familyVisits.iter()].find(v=>v.id===id)?.status==='cancelled');assert.equal([...a.db.myReminders.iter()][0].status,'cancelled')
+ const data=JSON.stringify({bloodType:'Unknown',allergies:'Fictional allergy information',medications:'Current use not confirmed',conditions:'',contact:'Fictional contact',notes:''});await d.reducers.publishEmergencyCard({data});await until(()=>[...a.db.familyEmergencyCards.iter()].length===1);assert.equal([...o.db.familyEmergencyCards.iter()].length,0);assert.equal([...a.db.familyEmergencyCards.iter()][0].data,data)
+ await a.reducers.publishEmergencyCard({data:JSON.stringify({bloodType:'O+',allergies:'',medications:'',conditions:'',contact:'',notes:''})});await until(()=>[...d.db.familyEmergencyCards.iter()].length===2);assert.equal([...d.db.familyEmergencyCards.iter()].find(c=>c.name==='Daniel')?.data,data);await assert.rejects(a.reducers.publishEmergencyCard({data:JSON.stringify({owner:[...d.db.myMembership.iter()][0].identity})}))
+ await d.reducers.unpublishEmergencyCard({});await until(()=>![...a.db.familyEmergencyCards.iter()].some(c=>c.name==='Daniel'));for(const v of d.db.familyVisits.iter())if(v.status!=='cancelled')await a.reducers.cancelFamilyVisit({id:v.id});await a.reducers.unpublishEmergencyCard({})
+ console.log('PASS Family reservations: separate-session sync, idempotency, racing slots, patient-private reminders and unauthorized access denied')
+ console.log('PASS Emergency cards: explicit snapshots, own-card editing only, cross-family isolation and unpublishing')
+}finally{
+ for(const c of clients){for(const v of c.db.familyVisits.iter())if(v.status==='confirmed-demo')try{await c.reducers.cancelFamilyVisit({id:v.id})}catch{/* Another test client may own this reservation. */}}
+ clients.forEach(c=>c.disconnect())
+}
